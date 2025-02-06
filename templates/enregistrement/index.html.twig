@@ -4,4 +4,15 @@
 
 {% block body %}
 
+        <h1>Choisir la durée de la réservation</h1>
+    <div class="durations">
+        {% for i in 1..5 %}
+            <a href="{{ path('enregistrement_duree', { 'duree': i }) }}">
+                <div class="duration">
+                    Réserver pour {{ i }} heure{{ i > 1 ? 's' }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
 {% endblock %}
