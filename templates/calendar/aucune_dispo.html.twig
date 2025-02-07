@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aucune Disponibilité{% endblock %}
+
+{% block body %}
+    <h1>Aucune disponibilité pour le {{ date|date('d/m/Y') }}</h1>
+    {% if heure is defined %}
+        <p>Le créneau de <strong>{{ heure }}</strong> est déjà réservé.</p>
+    {% endif %}
+    <p>Veuillez choisir une autre date ou un autre créneau horaire.</p>
+    <a href="{{ path('enregistrement_duree', { 'duree': 1 }) }}">Retour au calendrier</a>
+{% endblock %}

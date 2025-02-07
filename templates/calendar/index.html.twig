@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CalendarController!{% endblock %}
+
+{% block body %}
+
+    <h1>Choisir une date et un créneau horaire pour une réservation de {{ duree }} heure{{ duree > 1 ? 's' }}</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.heure_debut) }}
+        <button type="submit">Réserver</button>
+    {{ form_end(form) }}
+
+{% endblock %}
