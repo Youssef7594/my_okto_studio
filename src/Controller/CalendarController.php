@@ -13,6 +13,22 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CalendarController extends AbstractController
 {
+    /* Récupére les heure disponnible  */
+    private function getBookedTimeSlots(EntityManagerInterface $entityManager, \DateTimeInterface $date): array
+{
+    $reservations = $entityManager->getRepository(SeanceEnregistrement::class)->findBy(['date' => $date]);
+
+    $bookedSlots = [];
+
+    foreach ($reservations as $reservation) {
+        $start = $reservation->getHeureDebut()->format('H:i');
+        $end = $reservation->getHeureFin()->format('H:i');
+        $bookedSlots[] = "$start-$end";
+    }
+
+    return $bookedSlots;
+}
+
     // La méthode pour obtenir les créneaux horaires disponibles
     private function getAvailableTimeSlots(int $duree): array
     {
@@ -53,55 +69,81 @@ class CalendarController extends AbstractController
         return $timeSlots[$duree] ?? [];
     }
 
-    #[Route('/enregistrement/{duree}/calendar', name: 'enregistrement_calendar')]
-    public function calendar($duree, Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $seance = new SeanceEnregistrement();
-        $form = $this->createForm(ReservationType::class, $seance, ['duree' => $duree]);
 
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer l'heure de début sélectionnée
-            $timeSlotString = $form->get('heure_debut')->getData();
 
-            // Récupérer les créneaux horaires disponibles pour la durée
-            $availableSlots = $this->getAvailableTimeSlots($duree);
 
-            // Debugging: Afficher les créneaux horaires et l'heure sélectionnée
-            dump($availableSlots);
-            dump($timeSlotString);
+   #[Route('/enregistrement/{duree}/calendar', name: 'enregistrement_calendar')]
+public function calendar($duree, Request $request, EntityManagerInterface $entityManager): Response
+{
+    $seance = new SeanceEnregistrement();
+    
+    // Récupération des créneaux disponibles pour la durée choisie
+    $availableSlots = $this->getAvailableTimeSlots($duree);
 
-            // Vérifier si le créneau horaire sélectionné fait partie des créneaux disponibles
-            $foundSlot = false;
-            foreach ($availableSlots as $slot => $times) {
-                // Si l'heure de début correspond à une plage horaire, on marque qu'on l'a trouvée
-                if (strpos($slot, $timeSlotString) === 0) {
-                    $foundSlot = true;
-                    $seance->setHeureDebut(new \DateTime($times['start']));
-                    $seance->setHeureFin(new \DateTime($times['end']));
-                    break; // On sort de la boucle si le créneau est trouvé
-                }
-            }
+    // Création du formulaire
+    $form = $this->createForm(ReservationType::class, $seance, [
+        'duree' => $duree,
+        'available_time_slots' => $availableSlots,
+    ]);
 
-            if (!$foundSlot) {
-                throw new \Exception("Le créneau horaire sélectionné est invalide.");
-            }
+    $form->handleRequest($request);
 
-            // Si un créneau valide est trouvé, on définit le tarif et on sauvegarde la séance
-            $seance->setTarif($duree * 20);
-            $entityManager->persist($seance);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('reservation_confirmation');
+    if ($form->isSubmitted() && $form->isValid()) {
+        // 🔥 Récupérer la date sélectionnée
+        $date = $form->get('date')->getData();
+        
+        if (!$date) {
+            throw new \Exception("Aucune date sélectionnée.");
         }
 
-        return $this->render('calendar/index.html.twig', [
-            'form' => $form->createView(),
-            'duree' => $duree,
-            'success' => 'Votre réservation a bien été enregistrée !', // Message de succès
-        ]);
+        // 🔥 Récupérer les créneaux déjà réservés pour cette date
+        $bookedSlots = $this->getBookedTimeSlots($entityManager, $date);
+
+        // 🔥 Filtrer les créneaux disponibles
+        $filteredSlots = array_filter($availableSlots, function ($times) use ($bookedSlots) {
+            return !in_array("{$times['start']}-{$times['end']}", $bookedSlots);
+        });
+
+        // 🔥 Vérifier si l'heure sélectionnée est encore dispo
+        $timeSlotString = $form->get('heure_debut')->getData();
+        if ($timeSlotString instanceof \DateTime) {
+            $timeSlotString = $timeSlotString->format('H:i');
+        }
+
+        $foundSlot = false;
+        foreach ($filteredSlots as $slot => $times) {
+            if (strpos($slot, $timeSlotString) === 0) {
+                $foundSlot = true;
+                $seance->setDate($date);
+                $seance->setHeureDebut(new \DateTime($times['start']));
+                $seance->setHeureFin(new \DateTime($times['end']));
+                break;
+            }
+        }
+
+        if (!$foundSlot) {
+            return $this->render('calendar/aucune_dispo.html.twig', [
+                'date' => $date,
+                'heure' => $timeSlotString ?? null,
+            ]);
+        }
+
+        // 🔥 Enregistrement de la réservation
+        $seance->setTarif($duree * 20);
+        $entityManager->persist($seance);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('reservation_confirmation');
     }
+
+    return $this->render('calendar/index.html.twig', [
+        'form' => $form->createView(),
+        'duree' => $duree,
+    ]);
+}
+
+
 
 
 
