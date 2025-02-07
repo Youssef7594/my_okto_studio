@@ -1,0 +1,13 @@
+#header{
+    color: var(--white-okto);
+    font-family: 'Mooli';
+    .red{
+        color: var(--red-okto)
+    }
+
+    #menu{
+        a{
+            margin-left: 25px;
+        }
+    }
+}
