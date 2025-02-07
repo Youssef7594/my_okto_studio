@@ -1,7 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Panel Admin - Réservations{% endblock %}
 
 {% block body %}
 
+<body class="body-admin">
+    <main class="main-admin">
+    
+    <h1><strong>Liste des Réservations</strong></h1>
+    
+    <h2>(Voici toute les résevervation a se jour)</h2>
+
+    {% if reservations is empty %}
+        <p>Aucune réservation pour l'instant.</p>
+    {% else %}
+        <table id="table-admin" border="1">
+            
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Heure de début</th>
+                    <th>Heure de fin</th>
+                    <th>Tarif</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.id }}</td>
+                        <td>{{ reservation.nom }}</td>
+                        <td>{{ reservation.email }}</td>
+                        <td>{{ reservation.date|date('d/m/Y') }}</td>
+                        <td>{{ reservation.heureDebut|date('H:i') }}</td>
+                        <td>{{ reservation.heureFin|date('H:i') }}</td>
+                        <td>{{ reservation.tarif }} €</td>
+                        <td>
+                        <form action="{{ path('app_admin_delete', { 'id': reservation.id }) }}" method="post" 
+                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?');">
+                            <button type="submit" style="background-color: red; color: white; padding: 5px; border: none; cursor: pointer;">
+                                Supprimer
+                            </button>
+                        </form>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+                <div class="retour-acceui">
+                    <a href="{{ path('app_home') }}">Retourner a la page d'acceuil</a>
+                </div>
+        </main>
+    </body>
+    {% endif %}
 {% endblock %}
+
