@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Mooli&display=swap');
+
 @font-face {
     font-family: 'Mooli';
     src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Mooli&display=swap');
+}
+
+
+.inclusive-sans {
+  font-family: "Inclusive Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }

@@ -1,6 +1,9 @@
 #header{
+    opacity: 0.9;
+    position: sticky;
     color: var(--white-okto);
     font-family: 'Mooli';
+    /* font-weight: 900px; */
     .red{
         color: var(--red-okto)
     }
@@ -10,4 +13,6 @@
             margin-left: 25px;
         }
     }
+
+    
 }
