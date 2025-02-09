@@ -1,3 +1,7 @@
-_security_logout:
-    resource: security.route_loader.logout
-    type: service
+# config/routes/security.yaml
+security_login:
+  path: /login
+  controller: App\Controller\LoginController::login
+
+security_logout:
+  path: /logout

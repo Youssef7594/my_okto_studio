@@ -1,0 +1,33 @@
+.body-admin{
+    margin-top: 100px;
+
+
+
+    .main-admin{
+        text-align: center;
+        
+
+        #table-admin{
+            margin-left: 500px;
+
+
+        }
+    }
+
+
+    .retour-acceui{
+        margin-top: 100px;
+        background-color: rgb(184, 6, 6);
+        margin-left: 700px;
+        margin-right: 700px;
+        border: solid;
+            border-radius: 90px;
+        a{
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            
+        }
+
+    }
+}
