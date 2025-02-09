@@ -14,6 +14,9 @@
     {% if reservations is empty %}
         <p>Aucune réservation pour l'instant.</p>
     {% else %}
+
+    
+    <div class="table-ajust">
         <table id="table-admin" border="1">
             
             <thead>
@@ -49,6 +52,7 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
 
                 <div class="retour-acceui">
                     <a href="{{ path('app_home') }}">Retourner a la page d'acceuil</a>

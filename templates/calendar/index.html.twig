@@ -2,13 +2,30 @@
 
 {% block title %}Hello CalendarController!{% endblock %}
 
+
+
 {% block body %}
 
+
+    
+    <main class="main-calendar ">
+    
+
     <h1>Choisir une date et un créneau horaire pour une réservation de {{ duree }} heure{{ duree > 1 ? 's' }}</h1>
+
+    <section class="form-reservation">
+    
     {{ form_start(form) }}
+        {{ form_row(form.nom) }} 
+        {{ form_row(form.email) }} 
         {{ form_row(form.date) }}
         {{ form_row(form.heure_debut) }}
         <button type="submit">Réserver</button>
     {{ form_end(form) }}
+
+    </section>
+
+    </main>
+
 
 {% endblock %}

@@ -26,15 +26,28 @@ class ReservationType extends AbstractType
 
         // Construire le formulaire
         $builder
-            ->add('nom', TextType::class, ['label' => 'Nom'])
-            ->add('email', EmailType::class, ['label' => 'Email'])
-            ->add('date', DateType::class, ['label' => 'Date'])
+            ->add('nom', TextType::class, 
+            [
+                'label' => 'Nom',
+                'attr' => ['class' => 'form-modife-nom']
+                ])
+            ->add('email', EmailType::class, 
+            [
+                'label' => 'Email',
+                'attr' => ['class' => 'form-modife-email']
+                ])
+            ->add('date', DateType::class, 
+            [
+                'label' => 'Date',
+                'attr' => ['class' => 'form-modife-date']
+                ])
             ->add('heure_debut', ChoiceType::class, [
                 'label' => 'Heure de début',
                 'choices' => array_combine(
                     array_keys($options['available_time_slots']), // Passer les créneaux horaires comme option
                     array_keys($options['available_time_slots'])  // Clés comme labels des choix
                 ),
+                'attr' => ['class' => 'form-modife-debut']
             ])
             ->get('heure_debut') // Ajouter le transformateur sur ce champ
             ->addModelTransformer($timeSlotTransformer);

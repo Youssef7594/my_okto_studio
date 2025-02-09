@@ -6,29 +6,38 @@
     .main-admin{
         text-align: center;
         margin-top: 100px;
+
         
 
-        #table-admin{
-            margin-left: 500px;
+        .table-ajust{
+            display: flex;
+            justify-content: center;
 
 
+        }
+
+        td, th {
+            padding-top: 20px; /* Espace en haut des cellules */
+            padding-bottom: 20px; /* Espace en bas des cellules */
+            border-bottom: solid 2px;
         }
     }
 
 
     .retour-acceui{
         margin-top: 100px;
-        background-color: rgb(184, 6, 6);
-        margin-left: 700px;
-        margin-right: 700px;
-        border: solid;
-            border-radius: 90px;
+        
+        
+        
         a{
             padding: 10px;
             color: white;
             text-decoration: none;
-            
+            border: solid;
+            border-radius: 90px;
+            background-color: rgb(184, 6, 6);
         }
 
-    }
+
+        }
 }
