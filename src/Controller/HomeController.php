@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Entity\SeanceEnregistrement;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
+
 
 final class HomeController extends AbstractController
 {
@@ -20,6 +22,7 @@ final class HomeController extends AbstractController
 
 
     #[Route('/Admin', name: 'app_admin')]
+    #[IsGranted('ROLE_ADMIN')]
     public function admin(EntityManagerInterface $entityManager): Response
     {
         // Récupérer toutes les réservations
@@ -31,7 +34,7 @@ final class HomeController extends AbstractController
     }
 
 
-    
+
     /* Route pour suprimer une réservation */
     #[Route('/Admin/delete/{id}', name: 'app_admin_delete', methods: ['POST'])]
 public function deleteReservation(int $id, EntityManagerInterface $entityManager): Response
