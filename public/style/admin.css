@@ -1,10 +1,11 @@
 .body-admin{
-    margin-top: 100px;
+    /* margin-top: 200px; */
 
 
 
     .main-admin{
         text-align: center;
+        margin-top: 100px;
         
 
         #table-admin{

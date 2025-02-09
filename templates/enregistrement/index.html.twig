@@ -7,18 +7,27 @@
         <main class="main-enregistrement">
         
             <div class="head-enregistrement">
-                <h1>Choisir la durée de l'enregistrement</h1>
+                <h1>Choisissez la durée de l'enregistrement</h1>
             </div>
             
                 <div class="durations">
                 {% for i in 1..5 %}
-                    <a href="{{ path('enregistrement_duree', { 'duree': i }) }}">
+                    <a id="duration-enregistrement" href="{{ path('enregistrement_duree', { 'duree': i }) }}">
                         <div class="duration">
                             Réserver pour {{ i }} heure{{ i > 1 ? 's' }}
                         </div>
                     </a>
                 {% endfor %}
             </div>
+
+          {#   <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> #}
 
     </main>
 </body>
