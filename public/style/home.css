@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
         h1{
             margin-top: 30px;
             #okto{
@@ -36,4 +36,52 @@
             box-shadow: 3px 3px 2px var(--red-okto);
         }
     }    
+
+    #tarifs{
+        background-color: var(--black-okto);
+        #tarifs div{
+            margin-top: 70px;
+            
+        }
+
+        .contenu{
+            padding-top: 50px;
+        }
+
+        h2{
+            text-align: center;
+            color: var(--red-okto);
+            margin-bottom: 30px;
+        }
+
+        .tarifs{
+            border-radius: 20px;
+            color: var(--red-okto);
+            box-shadow: 3px 3px 2px var(--red-okto);
+            padding: 30px;
+            .bigger{
+                font-size: 32px;
+                color: var(--white-okto);
+            }
+
+            .smaller{
+                font-size: 16px;
+                color: var(--grey-okto);
+            }
+
+        }
+
+        #icons{
+            margin-top: 50px;
+            text-align: center;
+            .icon{
+               font-size: 60px;
+               color: var(--grey-okto);
+            }
+            p{
+                color: var(--white-okto);
+                margin-top: -20px;
+            }
+        }
+    }
 }
