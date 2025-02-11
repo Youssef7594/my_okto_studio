@@ -5,7 +5,7 @@
 {% block body %}
     <main id="home">
         <section id="top-home">
-            <div>
+            <div container>
                 <h1 class="inclusive-sans">
                     <div id="okto">
                         <span>O</span>
@@ -27,5 +27,72 @@
                 <button>Réserver</button>
             </div>
         </section>
+
+        <section id="tarifs">
+            <div class="container contenu">
+                <h2>NOS TARIFS</h2>
+                <div class="d-flex justify-content-around">
+                    <div class="tarifs">
+                        <h3>ENREGISTREMENT</h3>
+                        <p class="smaller">TARIF HORAIRE | ENREGISTREMENT SIMPLE (PRE-MIX INCLUS)</p>
+                        <p class="bigger">20€/H</p>
+                    </div>
+                    <div class="tarifs">
+                        <h3>MIXAGE</h3>
+                        <p class="smaller">TARIF PAR TITRE | MP3/WAVE | PISTE PAR PISTE</p>
+                        <p class="bigger">40€</p>
+                    </div>
+                </div>
+
+                <div class="container d-flex justify-content-around" id="icons">
+                    <div>
+                        <p class="icon"><i class="fa-solid fa-euro-sign"></i></p>
+                        <p>Payement en carte <br> non disponible</p>
+                    </div>
+
+                    <div>
+                        <p class="icon"><i class="fa-duotone fa-solid fa-user-group"></i></p>
+                        <p>Locaux limité <br> à 5 personnes</p>
+                    </div>
+
+                    <div>
+                        <p class="icon"><i class="fa-duotone fa-solid fa-clock-rotate-left"></i></p>
+                        <p>Annullation <br> sous 48H</p>
+                    </div>
+
+                    <div>
+                        <p class="icon"><i class="fa-duotone fa-solid fa-mug-hot"></i></p>
+                        <p>Snacks disponible <br> à l'achat</p>
+                    </div>
+
+                    <div>
+                        <p class="icon"><i class="fa-solid fa-square-parking"></i></p>
+                        <p>Parking <br> disponible</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>NOS CONTACTS</h2>
+
+            <div class="d-flex justify-content-around">
+                <div>
+                    <p class="icon"></p>
+                    <p></p>
+                </div>
+
+                <div>
+                    <p class="icon"></p>
+                    <p></p>
+                </div>
+
+                <div>
+                    <p class="icon"></p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
     </main>
 {% endblock %}
