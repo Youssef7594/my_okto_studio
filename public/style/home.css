@@ -84,4 +84,41 @@
             }
         }
     }
+
+    #about{
+        padding-top: 80px;
+        background-color: var(--black-okto);
+        h2{
+            text-align: center;
+            color: var(--red-okto);
+        }
+        iframe{
+            
+            width: 75%;
+            margin-left: 12%;
+        }
+    }
+
+    #contact{
+        color: var(--red-okto);
+        background-color: var(--black-okto);
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 90px;
+
+        .icon{
+            font-size: 60px;
+            color: var(--red-okto);
+         }
+
+         p{
+            color: var(--red-okto);
+            margin-top: -20px;
+         }
+
+        h2{
+            text-align: center;
+            margin-bottom: 80px;
+        }
+    }
 }
