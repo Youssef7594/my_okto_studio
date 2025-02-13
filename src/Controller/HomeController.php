@@ -51,4 +51,17 @@ public function deleteReservation(int $id, EntityManagerInterface $entityManager
 
     return $this->redirectToRoute('app_admin'); // Redirige vers la page Admin après suppression
 }
+
+
+
+    /* Cette route affiche tout les droits, copyrights... */
+
+    #[Route('/droits', name: 'app_droit')]
+    public function droit(): Response
+    {
+        return $this->render('home/droits.html.twig', [
+            
+        ]);
+    }
+
 }
