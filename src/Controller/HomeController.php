@@ -56,7 +56,7 @@ public function deleteReservation(int $id, EntityManagerInterface $entityManager
 
     /* Cette route affiche tout les droits, copyrights... */
 
-    #[Route('/droits', name: 'app_droit')]
+    #[Route('/droits', name: 'app_droits')]
     public function droit(): Response
     {
         return $this->render('home/droits.html.twig', [
