@@ -78,7 +78,7 @@
         }
 
         #icons{
-            margin-top: 50px;
+            margin-top: 122px;
             text-align: center;
             .icon{
                font-size: 60px;
@@ -92,7 +92,7 @@
     }
 
     #about{
-        padding-top: 80px;
+        padding-top: 200px;
         background-color: var(--black-okto);
         h2{
             text-align: center;
@@ -100,10 +100,17 @@
             margin-top: 80px;
             margin-bottom: 50px;
         }
+
+        .resume{
+            padding: 60px;
+            color: var(--white-okto);
+            text-align: center;
+        }
+
         iframe{
             
-            width: 75%;
-            margin-left: 12%;
+            width: 100%;
+            
         }
     }
 
@@ -111,7 +118,7 @@
         color: var(--red-okto);
         background-color: var(--black-okto);
         text-align: center;
-        padding-top: 30px;
+        padding-top: 100px;
         padding-bottom: 90px;
 
         .icon{
