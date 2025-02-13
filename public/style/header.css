@@ -11,6 +11,19 @@
     #menu{
         a{
             margin-left: 25px;
+            
+        }
+
+        a:hover{
+            color: var(--red-okto)
+        }
+    }
+
+
+    .navbar{
+        a{
+            text-decoration: none;
+            color: white;
         }
     }
 
