@@ -25,18 +25,22 @@
     }
 
 
-    .retour-acceui{
+    .retour-acceuil{
         margin-top: 100px;
+        margin-bottom: 200px;
         
         
         
         a{
-            padding: 10px;
-            color: white;
+            background-color: var(--black-okto);
+            border: none;
+            color: var(--white-okto);
+            padding: 15px 74px;
+            border-radius: 22px;
+            margin-top: 40px;
+            box-shadow: 3px 3px 2px var(--red-okto);
             text-decoration: none;
-            border: solid;
-            border-radius: 90px;
-            background-color: rgb(184, 6, 6);
+            
         }
 
 
