@@ -5,11 +5,13 @@
 
     .main-enregistrement{
         text-align: center;
+        background-color: var(--black-okto);
+        padding: 80px;
         
 
         .head-enregistrement{
             margin-top: 0px;
-            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.507), rgba(231, 22, 22, 0.871)), 
+            background: linear-gradient(to bottom, rgba(217, 45, 32, 0.02), rgba(217, 45, 32, 0.1)), 
                 url('../img/console-2021936_1280.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -30,7 +32,7 @@
         .durations{
 
             margin-top: 100px;
-            margin-bottom: 30px;
+            /* margin-bottom: 30px; */
             
             #duration-enregistrement{
                 text-decoration: none;
@@ -38,11 +40,11 @@
 
                 .duration{
                     margin-top: 40px;
-                    border: solid red;
+                    box-shadow: 3px 3px 2px var(--red-okto);
                     padding: 20px;
                     margin-left: 400px;
                     margin-right: 400px;
-                    background-color: #282121;
+                    background-color: var(--black-okto);
                     color: var(--white-okto);
                     text-shadow: 5px 3px  4px rgb(9, 9, 9);
                     border-radius: 90px;
@@ -82,14 +84,15 @@
     
                     .duration{
                         margin-top: 40px;
-                        border: solid red;
+                        
                         padding: 20px;
                         margin-left: 200px;
                         margin-right: 200px;
-                        background-color: #282121;
+                        background-color: var(--black-okto);
                         color: var(--white-okto);
                         text-shadow: 5px 3px  4px rgb(9, 9, 9);
                         border-radius: 90px;
+                        box-shadow: 3px 3px 2px var(--red-okto);
                         
                     }
     

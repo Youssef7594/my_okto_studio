@@ -40,9 +40,17 @@
             margin-top: 40px;
             box-shadow: 3px 3px 2px var(--red-okto);
             text-decoration: none;
-            
         }
 
 
         }
+
+        button[type=submit]{
+            background-color: var(--red-okto);
+            color: white; 
+            padding: 5px; 
+            border: none; 
+            cursor: pointer;
+        }
+        
 }

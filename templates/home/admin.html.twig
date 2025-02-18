@@ -43,7 +43,7 @@
                         <td>
                         <form action="{{ path('app_admin_delete', { 'id': reservation.id }) }}" method="post" 
                                 onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?');">
-                            <button type="submit" style="background-color: red; color: white; padding: 5px; border: none; cursor: pointer;">
+                            <button type="submit"> 
                                 Supprimer
                             </button>
                         </form>
