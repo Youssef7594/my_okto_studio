@@ -8,6 +8,10 @@
         color: var(--red-okto)
     }
 
+    a img{
+        width: 90px;
+    }
+
     #menu{
         a{
             margin-left: 25px;

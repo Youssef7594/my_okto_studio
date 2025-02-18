@@ -14,7 +14,7 @@
                 {% for i in 1..5 %}
                     <a id="duration-enregistrement" href="{{ path('enregistrement_duree', { 'duree': i }) }}">
                         <div class="duration">
-                            Réserver pour {{ i }} heure{{ i > 1 ? 's' }}
+                            Réserver {{ i }} heure{{ i > 1 ? 's' }}
                         </div>
                     </a>
                 {% endfor %}
