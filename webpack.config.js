@@ -53,6 +53,9 @@ Encore
         config.corejs = '3.38';
     })
 
+
+    .enableStimulusBridge('./assets/controllers.json')
+
     // enables Sass/SCSS support
     //.enableSassLoader()
 
