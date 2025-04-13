@@ -1,0 +1,7 @@
+# config/routes/security.yaml
+security_login:
+  path: /login
+  controller: App\Controller\LoginController::login
+
+security_logout:
+  path: /logout
