@@ -1,0 +1,10 @@
+#footer{
+    padding: 40px;
+    text-align: center;
+    background-color: var(--red-okto);
+    color: var(--white-okto);
+    a{
+        color: var(--white-okto);
+        
+    }
+}

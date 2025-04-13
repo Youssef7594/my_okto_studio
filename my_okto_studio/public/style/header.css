@@ -1,0 +1,35 @@
+#header{
+    opacity: 0.9;
+    position: sticky;
+    color: var(--white-okto);
+    font-family: 'Mooli';
+    /* font-weight: 900px; */
+    .red{
+        color: var(--red-okto)
+    }
+
+    a img{
+        width: 90px;
+    }
+
+    #menu{
+        a{
+            margin-left: 25px;
+            
+        }
+
+        a:hover{
+            color: var(--red-okto)
+        }
+    }
+
+
+    .navbar{
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    
+}

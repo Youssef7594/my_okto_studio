@@ -1,0 +1,120 @@
+/* --- Style général de la page --- */
+.main-calendar {
+    font-family: 'Arial', sans-serif;
+    background: var(--black-okto);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Conteneur principal du formulaire --- */
+.form-reservation {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background: var(--black-okto);
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px var(--red-okto);
+    backdrop-filter: blur(10px);
+}
+
+/* --- Titre --- */
+.main-calendar h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* --- Section Formulaire --- */
+.form-reservation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- Style des champs du formulaire --- */
+.form-reservation label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-reservation input,
+.form-reservation select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Effet focus sur les champs --- */
+.form-reservation input:focus,
+.form-reservation select:focus {
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.7);
+    background: white;
+}
+
+/* --- Bouton de soumission --- */
+.form-reservation button {
+    margin-top: 20px;
+    background: var(--black-okto);
+    color: #fffbfb;
+    box-shadow: 3px 3px 2px var(--red-okto);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* --- Effet hover du bouton --- */
+.form-reservation button:hover {
+    background: #ff9800;
+    transform: scale(1.05);
+}
+
+/* --- Responsive pour mobile --- */
+@media screen and (max-width: 600px) {
+    .form-reservation {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .main-calendar h1 {
+        font-size: 22px;
+    }
+}
+
+
+
+
+/* Parti du css pour l'affichage de la confirmation de réservation */
+
+    .affichage-confirmation{
+        margin-top: 50px;
+        text-align: center;
+        padding-bottom: 600px;
+    }
+
+
+
+
+    /* Parti du css pour l'affichage de la l'indisponibilté de la date  */
+
+    .pas-dipsonible{
+        margin-top: 50px;
+        text-align: center;
+        padding-bottom: 600px;
+    }

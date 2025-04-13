@@ -1,0 +1,119 @@
+.body-enregistrement{
+    
+
+
+
+    .main-enregistrement{
+        text-align: center;
+        background-color: var(--black-okto);
+        padding: 80px;
+        
+
+        .head-enregistrement{
+            margin-top: 0px;
+            background: linear-gradient(to bottom, rgba(217, 45, 32, 0.02), rgba(217, 45, 32, 0.1)), 
+                url('../img/console-2021936_1280.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 400px;
+            
+
+            h1{
+                font-weight: 900px;
+                font-family: "Inclusive Sans", serif;
+                font-size: 90px;
+                color: var(--white-okto);
+                padding: 110px;
+            }
+        }
+
+
+        .durations{
+
+            margin-top: 100px;
+            /* margin-bottom: 30px; */
+            
+            #duration-enregistrement{
+                text-decoration: none;
+               
+
+                .duration{
+                    margin-top: 40px;
+                    box-shadow: 3px 3px 2px var(--red-okto);
+                    padding: 20px;
+                    margin-left: 400px;
+                    margin-right: 400px;
+                    background-color: var(--black-okto);
+                    color: var(--white-okto);
+                    text-shadow: 5px 3px  4px rgb(9, 9, 9);
+                    border-radius: 90px;
+                    
+                }
+
+                .duration:hover{
+                    transform: scale(1.05);
+                    transition: transform 1s ease;
+                }
+            }
+
+            
+        }
+
+
+
+        /* responsive taille max 1070px  */
+        @media screen and (max-width: 1070px){
+
+            .head-enregistrement h1 {
+                
+                font-family: "Inclusive Sans", serif;
+                font-size: 70px;
+                padding: 110px;
+            }
+
+
+
+            .durations{
+
+                margin-top: 100px;
+                margin-bottom: 30px;
+                
+                #duration-enregistrement{
+                    text-decoration: none;
+    
+                    .duration{
+                        margin-top: 40px;
+                        
+                        padding: 20px;
+                        margin-left: 200px;
+                        margin-right: 200px;
+                        background-color: var(--black-okto);
+                        color: var(--white-okto);
+                        text-shadow: 5px 3px  4px rgb(9, 9, 9);
+                        border-radius: 90px;
+                        box-shadow: 3px 3px 2px var(--red-okto);
+                        
+                    }
+    
+                    .duration:hover{
+                        transform: scale(1.05);
+                        transition: transform 1s ease;
+                    }
+                }
+    
+                
+            }
+        
+        
+        
+        
+        }
+    }
+
+    
+}
+
+
+
+
