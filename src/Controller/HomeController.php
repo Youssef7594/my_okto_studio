@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 final class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function index(): Response
     {
         return $this->render('home/index.html.twig', [
@@ -28,7 +28,7 @@ final class HomeController extends AbstractController
         // Récupérer toutes les réservations
     $reservations = $entityManager->getRepository(SeanceEnregistrement::class)->findAll();
 
-    return $this->render('acceuil/admin.html.twig', [
+    return $this->render('home/admin.html.twig', [
         'reservations' => $reservations, // 🔥 Envoie les réservations au template
     ]);
     }
@@ -59,7 +59,7 @@ public function deleteReservation(int $id, EntityManagerInterface $entityManager
     #[Route('/droits', name: 'app_droits')]
     public function droit(): Response
     {
-        return $this->render('acceuil/droits.html.twig', [
+        return $this->render('home/droits.html.twig', [
             
         ]);
     }
