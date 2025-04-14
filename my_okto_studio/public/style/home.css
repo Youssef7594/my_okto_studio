@@ -140,11 +140,11 @@
 
         a{
             text-decoration: none;
-            color: var(--grey-okto);
+            color: var(--red-okto);
         }
 
          p{
-            color: var(--grey-okto);
+            color: var(--red-okto);
             margin-top: -20px;
          }
 
